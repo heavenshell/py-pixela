@@ -1,6 +1,9 @@
 Pixela
 ======
 
+.. image:: https://travis-ci.com/heavenshell/py-pixela.svg?branch=master
+    :target: https://travis-ci.com/heavenshell/py-pixela
+
 `Pixela <https://pixe.la/>`_ API client for Python.
 
 Installation
