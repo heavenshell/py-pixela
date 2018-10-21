@@ -3,6 +3,12 @@ Pixela
 
 .. image:: https://travis-ci.com/heavenshell/py-pixela.svg?branch=master
     :target: https://travis-ci.com/heavenshell/py-pixela
+.. image:: https://pyup.io/repos/github/heavenshell/py-pixela/shield.svg
+     :target: https://pyup.io/repos/github/heavenshell/py-pixela/
+     :alt: Updates
+.. image:: https://pyup.io/repos/github/heavenshell/py-pixela/python-3-shield.svg
+     :target: https://pyup.io/repos/github/heavenshell/py-pixela/
+     :alt: Python 3
 
 `Pixela <https://pixe.la/>`_ API client for Python.
 
