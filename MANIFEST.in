@@ -1,0 +1,16 @@
+graft pixela
+
+include LICENSE
+include README.rst
+include setup.cfg
+include setup.py
+
+exclude .pyup.yml
+exclude .travis.yml
+exclude requirements.txt
+exclude tox.ini
+
+global-exclude __pycache__
+global-exclude *.py[co]
+
+prune tests
