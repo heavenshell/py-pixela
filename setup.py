@@ -40,9 +40,9 @@ setup(
     long_description=description,
     license='BSD',
     platforms='any',
-    packages=find_packages(exclude=['tests', 'docs']),
+    packages=find_packages(exclude=['tests']),
     package_dir={'': '.'},
-    install_requires=requires,
+    install_requires=['mock', 'requests', 'pytz'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',

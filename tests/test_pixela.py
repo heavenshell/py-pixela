@@ -11,11 +11,9 @@
 """
 import json
 from datetime import datetime
-from unittest import (
-    mock,
-    TestCase,
-)
+from unittest import TestCase
 
+from mock import mock
 from requests import (
     Response,
     Session,
