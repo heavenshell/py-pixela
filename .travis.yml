@@ -1,0 +1,17 @@
+language: python
+python:
+- 2.7
+- 3.7
+before_script:
+- flake8 --verbose --jobs=8
+script:
+- python setup.py test
+deploy:
+  provider: pypi
+  user: ohyanagi
+  password:
+    secure: n3vuVlSwS4p/ArSc/A/YS40rjD3L1hlp32lrN++5bm7ef1LgoHb6g+msiurgbKkNNj71lCvJv8m9Q81jSVdmwE8zQn/wtuRkZxKzYTI+r6rBIZiDFrVqr/e0Zy5WF3ZyWeQuONP+DxzxETDwyF17I/0ElLe9u+t2xnb0dL+xF3Z00aie9DsEfT+KcZaoI2sZXq1A3i/d2lrmG1at3cIqI0qot26GyaBU/TXOOYUSe8Bf04NHfvg0A5a4z63g4325J5I+F3Mum1wgtGi4AgXmvWdKwqMPETZkfHL6YeUJGLubdpC30WyJtcKZ/k8K11QZYIGPjzPQa+hT7e7Ey2YQplHb9L1sPv3dhvARU9Ty0Zh/SwwI9vHf5BsqQHk4oIdpGxl83OcmZO8LJZ+hRw5PpQRhwLo/JU/LNyDspy2+EtPYmJyVTr+MmdCDyBwaLASxWwKav4hKg32g1WcwkeWGPd8ruhREFS6nhEKc53gFb/7rLcll5M323GD5a4E+GAXntjqK+bB+JVcmV2e9QneYLixuUdCZTv1FZYAbi12UsWepmISsc4YN78sVUx6XMEelYRfaARJ7iOeMuicdeUxHSTTS1D7WL10QgkFbMccr4lMUW0FknHIq6Tk23RkeU7NzvQ9ggVfu2haKip6XSHl2AGcSiGGImzy/DGBXz1fhjGg=
+  distributions: sdist bdist_wheel
+  on:
+    tags: true
+    repo: heavenshell/py-pixela
