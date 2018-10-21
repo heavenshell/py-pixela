@@ -1,13 +1,17 @@
 sudo: true
 dist: xenial
 language: python
+cache:
+  pip: true
+  directories:
+  - $TRAVIS_BUILD_DIR/.tox
 python:
-- 2.7
-- 3.7
+  - 2.7
+  - 3.7
 before_script:
-- flake8 --verbose --jobs=8
+  - flake8 --verbose --jobs=8
 script:
-- python setup.py test
+  - python setup.py test
 deploy:
   provider: pypi
   user: ohyanagi
