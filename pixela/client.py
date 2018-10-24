@@ -37,14 +37,24 @@ class GraphMethodsMixin(object):
             token=self.token,
         )
 
-    def graph_url(self, graph_id, date=None):
+    def graph_url(self, graph_id, date=None, mode=None):
         url = '{endpoint}/users/{username}/graphs/{graph_id}'.format(
             endpoint=self.API_ENDPOINT,
             username=self.username,
             graph_id=graph_id,
         )
-        if date:
-            url = url + '?date={date}'.format(date=self.to_ymd(date))
+        params = {
+            'date': self.to_ymd(date) if date else False,
+            'mode': mode if mode == 'short' else False,
+        }
+        query = ''
+        for p in params:
+            if params[p]:
+                query = query + '&' if query else ''
+                query = query + '{key}={val}'.format(key=p, val=params[p])
+
+        if query:
+            return url + '?' + query
 
         return url
 
