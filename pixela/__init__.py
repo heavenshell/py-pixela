@@ -9,7 +9,7 @@
     :copyright: (c) 2018 Shinya Ohyanagi, All rights reserved.
     :license: BSD, see LICENSE for more details.
 """
-__version__ = '1.0.0'
+__version__ = '1.1.0'
 
 import json
 import logging
