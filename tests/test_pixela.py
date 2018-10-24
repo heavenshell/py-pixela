@@ -149,6 +149,16 @@ class GraphMethodsMixinTestCase(TestCase):
         url = self.client.graph_url(graph_id='py-pixela')
         self.assertEqual(url, 'https://pixe.la/v1/users/heavenshell/graphs/py-pixela')
 
+        date = datetime.strptime('2018-10-21', '%Y-%m-%d')
+        url = self.client.graph_url(graph_id='py-pixela', date=date)
+        self.assertEqual(url, 'https://pixe.la/v1/users/heavenshell/graphs/py-pixela?date=20181021')
+
+        url = self.client.graph_url(graph_id='py-pixela', mode='short')
+        self.assertEqual(url, 'https://pixe.la/v1/users/heavenshell/graphs/py-pixela?mode=short')
+
+        url = self.client.graph_url(graph_id='py-pixela', date=date, mode='short')
+        self.assertEqual(url, 'https://pixe.la/v1/users/heavenshell/graphs/py-pixela?date=20181021&mode=short')
+
     @mock.patch.object(
         Session,
         'delete',
