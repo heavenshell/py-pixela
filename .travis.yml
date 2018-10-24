@@ -4,22 +4,21 @@ language: python
 cache:
   pip: true
   directories:
-  - $TRAVIS_BUILD_DIR/.tox
+  - "$TRAVIS_BUILD_DIR/.tox"
 python:
-  - 2.7
-  - 3.7
+- 2.7
+- 3.7
 before_script:
-  - flake8 --verbose --jobs=8
+- flake8 --verbose --jobs=8
 script:
-  - python setup.py test
+- python setup.py test
 deploy:
   provider: pypi
   user: ohyanagi
   password:
-    secure: n3vuVlSwS4p/ArSc/A/YS40rjD3L1hlp32lrN++5bm7ef1LgoHb6g+msiurgbKkNNj71lCvJv8m9Q81jSVdmwE8zQn/wtuRkZxKzYTI+r6rBIZiDFrVqr/e0Zy5WF3ZyWeQuONP+DxzxETDwyF17I/0ElLe9u+t2xnb0dL+xF3Z00aie9DsEfT+KcZaoI2sZXq1A3i/d2lrmG1at3cIqI0qot26GyaBU/TXOOYUSe8Bf04NHfvg0A5a4z63g4325J5I+F3Mum1wgtGi4AgXmvWdKwqMPETZkfHL6YeUJGLubdpC30WyJtcKZ/k8K11QZYIGPjzPQa+hT7e7Ey2YQplHb9L1sPv3dhvARU9Ty0Zh/SwwI9vHf5BsqQHk4oIdpGxl83OcmZO8LJZ+hRw5PpQRhwLo/JU/LNyDspy2+EtPYmJyVTr+MmdCDyBwaLASxWwKav4hKg32g1WcwkeWGPd8ruhREFS6nhEKc53gFb/7rLcll5M323GD5a4E+GAXntjqK+bB+JVcmV2e9QneYLixuUdCZTv1FZYAbi12UsWepmISsc4YN78sVUx6XMEelYRfaARJ7iOeMuicdeUxHSTTS1D7WL10QgkFbMccr4lMUW0FknHIq6Tk23RkeU7NzvQ9ggVfu2haKip6XSHl2AGcSiGGImzy/DGBXz1fhjGg=
-  distributions: sdist bdist_wheel
+    secure: uMB6+5SrppN3PBrwdt5LBnH7tj7Ve631xTZJd7byaX7Tj82aj8ha2f7lOG/awj8uKfBh0dPSflvsW/IEMUBmOTicmNa7KPb5fomnA0LjG6XOORtRpwzHaezcPTfke9cMROObB4xa5JCsFyLRuZFNFYdpQNWBQ1+ocj7KrgAweyaWuXCxhtw1ISt8k69jYZ+nLc0tLbBqWtf8/T8C1ZgMnjPHBAXIZaN3nOV4Uxn6My4zEZfBBAaDiLsA4J3yHZSx2X24IrxPvdGCpV7oqzazl0YXMb2Ls6yipR5r1YmHR6fHFRPTon0j3ioqYQ5HzwrLqsxfHLNiESnmUxFGjrxMHQ9/RgCND3Ow6UIKJBTj0kFJ3Q++Xxu2Orw/tqDT7ToRLuqlTAe5JlDgbd8LD3VEi/3Ld/OgoIe7cD/XjyiluOPkxW8Rw7C9Fars97CmskeSOCIViFwRdIuft8+L7zkBO1pDetlGsgJTk2zZMJufuTzVKXIPXOQglBMJFQwwhHc2OAKWpWJQu9F7XdPcscqlE1DHsRXZ5+K4V2AQPutngqNr36RCeSG3fW7qXTmLYA/Uwqn1msOlc2S1DNeUOFy8x1GcwLilFNUYo+3wRNQcfbCTXffl0t5axE4bI0uegGzNNMHtR9RdgS7GfmBZ3XtLmAqAjiQe67w2N527RU2HFXY=
   on:
     tags: true
+    distributions: sdist bdist_wheel
     repo: heavenshell/py-pixela
     python: 3.7
-  allow_failure: false
