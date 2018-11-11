@@ -104,6 +104,7 @@ class GraphMethodsMixinTestCase(TestCase):
             unit='commit',
             type='int',
             color='shibafu',
+            timezone='Asia/Tokyo',
         )
         ret = json.loads(res.content)
         self.assertEqual(ret['message'], 'Success.')
@@ -140,6 +141,7 @@ class GraphMethodsMixinTestCase(TestCase):
             name='py-pixela',
             unit='commit',
             color='momiji',
+            timezone='GMT',
         )
         ret = json.loads(res.content)
         self.assertEqual(ret['message'], 'Success.')
