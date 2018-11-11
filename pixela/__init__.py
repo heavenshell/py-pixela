@@ -13,6 +13,7 @@ __version__ = '1.1.0'
 
 import json
 import logging
+import warnings
 from datetime import datetime
 
 from pytz import timezone
@@ -45,6 +46,8 @@ class Pixela(
     def __init__(self, username, token, tz=None, logger=None):
         self.username = username
         self.token = token
+        if tz:
+            warnings.warn('tz will remove 1.3.0', DeprecationWarning)
         tz = tz or 'UTC'
         self.tz = timezone(tz)
 

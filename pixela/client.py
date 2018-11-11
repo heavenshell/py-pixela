@@ -14,7 +14,7 @@ from datetime import datetime
 
 class GraphMethodsMixin(object):
 
-    def create_graph(self, graph_id, name, unit, type, color):
+    def create_graph(self, graph_id, name, unit, type, color, timezone=None):
         params = {
             'id': graph_id,
             'name': name,
@@ -22,6 +22,8 @@ class GraphMethodsMixin(object):
             'type': type,
             'color': color,
         }
+        if timezone:
+            params['timezone'] = timezone
         return self.send(
             method='post',
             url='users/{username}/graphs'.format(username=self.username),
@@ -58,7 +60,15 @@ class GraphMethodsMixin(object):
 
         return url
 
-    def update_graph(self, graph_id, name, unit, color, purge_cache_urls=None):
+    def update_graph(
+        self,
+        graph_id,
+        name,
+        unit,
+        color,
+        purge_cache_urls=None,
+        timezone=None,
+    ):
         params = {
             'name': name,
             'unit': unit,
@@ -67,6 +77,9 @@ class GraphMethodsMixin(object):
         if purge_cache_urls:
             params['purge_cache_urls'] = purge_cache_urls \
                 if isinstance(purge_cache_urls, list) else [purge_cache_urls]
+
+        if timezone:
+            params['timezone'] = timezone
 
         return self.send(
             method='put',

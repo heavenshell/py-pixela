@@ -41,6 +41,7 @@ Usage
       unit='commit',
       type='int',
       color='shibafu',
+      timezone='Asia/Tokyo',
   )
 
   # register value
