@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-    pixeta.tests
+    pixela.tests
     ~~~~~~~~~~~~
 
-    Add description here
+    Tests for pixela.
 
 
-    :copyright: (c) 2017 Shinya Ohyanagi, All rights reserved.
+    :copyright: (c) 2018 Shinya Ohyanagi, All rights reserved.
     :license: BSD, see LICENSE for more details.
 """
 import json
@@ -34,6 +34,17 @@ class UserMethodsMixinTestCase(TestCase):
     @classmethod
     def setUpClass(cls):
         cls.client = Pixela(username='heavenshell', token='ba0afe74-86a3-40fe-8bf7-0801027d087d')
+
+    def test_deprecation_warning(self):
+        import warnings
+        with warnings.catch_warnings(record=True) as w:
+            warnings.filterwarnings('always')
+            Pixela(
+                username='heavenshell',
+                token='ba0afe74-86a3-40fe-8bf7-0801027d087d',
+                tz='Asia/Tokyo',
+            )
+            self.assertEqual(str(w.pop().message), 'tz will remove 1.3.0')
 
     @mock.patch.object(
         Session,
