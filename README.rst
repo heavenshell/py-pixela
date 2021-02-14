@@ -1,8 +1,8 @@
 Pixela
 ======
 
-.. image:: https://travis-ci.com/heavenshell/py-pixela.svg?branch=master
-    :target: https://travis-ci.com/heavenshell/py-pixela
+.. image:: https://github.com/heavenshell/py-pixela/workflows/build/badge.svg
+    :target: https://github.com/heavenshell/py-pixela/actions
 .. image:: https://pyup.io/repos/github/heavenshell/py-pixela/shield.svg
      :target: https://pyup.io/repos/github/heavenshell/py-pixela/
      :alt: Updates
