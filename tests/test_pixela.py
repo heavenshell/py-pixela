@@ -86,7 +86,7 @@ class UserMethodsMixinTestCase(TestCase):
         'put',
         return_value=mock_response(
             status_code=200,
-            content={'message': 'Success.', 'isSuccess': True},
+            content={'message': 'In order to use this service, you have to be aged or have the consent of a custodial person.', 'isSuccess': True},
         ),
     )
     
