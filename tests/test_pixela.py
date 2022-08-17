@@ -71,7 +71,6 @@ class UserMethodsMixinTestCase(TestCase):
             content={'message': 'In order to use this service, you have to be aged or have the consent of a custodial person.', 'isSuccess': True},
         ),
     )
-    
     def test_create_user_minor(self, m):
         res = self.client.create_user(
             agree_terms_of_service=True,
@@ -80,7 +79,7 @@ class UserMethodsMixinTestCase(TestCase):
         ret = json.loads(res.content)
         self.assertEqual(ret['message'], 'In order to use this service, you have to be aged or have the consent of a custodial person.')
         self.assertEqual(ret['isSuccess'], True)
-    
+
     @mock.patch.object(
         Session,
         'put',
@@ -89,7 +88,6 @@ class UserMethodsMixinTestCase(TestCase):
             content={'message': 'Success.', 'isSuccess': True},
         ),
     )
-    
     def test_update_user(self, m):
         res = self.client.update_user(new_token='ba0afe74-86a3-40fe-8bf7-0801027d087d')
         ret = json.loads(res.content)
