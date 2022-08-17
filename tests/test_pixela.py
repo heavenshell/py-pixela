@@ -78,7 +78,7 @@ class UserMethodsMixinTestCase(TestCase):
             not_minor=False,
         )
         ret = json.loads(res.content)
-        self.assertEqual(ret['message'], 'Success.')
+        self.assertEqual(ret['message'], 'In order to use this service, you have to be aged or have the consent of a custodial person.')
         self.assertEqual(ret['isSuccess'], True)
     
     @mock.patch.object(
