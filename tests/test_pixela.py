@@ -71,6 +71,25 @@ class UserMethodsMixinTestCase(TestCase):
             content={'message': 'Success.', 'isSuccess': True},
         ),
     )
+    
+    def test_create_user_minor(self, m):
+        res = self.client.create_user(
+            agree_terms_of_service=True,
+            not_minor=False,
+        )
+        ret = json.loads(res.content)
+        self.assertEqual(ret['message'], 'Success.')
+        self.assertEqual(ret['isSuccess'], True)
+    
+    @mock.patch.object(
+        Session,
+        'put',
+        return_value=mock_response(
+            status_code=200,
+            content={'message': 'Success.', 'isSuccess': True},
+        ),
+    )
+    
     def test_update_user(self, m):
         res = self.client.update_user(new_token='ba0afe74-86a3-40fe-8bf7-0801027d087d')
         ret = json.loads(res.content)
