@@ -68,7 +68,9 @@ class UserMethodsMixinTestCase(TestCase):
         'post',
         return_value=mock_response(
             status_code=200,
-            content={'message': 'In order to use this service, you have to be aged or have the consent of a custodial person.', 'isSuccess': True},
+            content={'message':
+                     'In order to use this service, you have to be aged or have the consent of a custodial person.',
+                     'isSuccess': True},
         ),
     )
     def test_create_user_minor(self, m):
@@ -77,7 +79,8 @@ class UserMethodsMixinTestCase(TestCase):
             not_minor=False,
         )
         ret = json.loads(res.content)
-        self.assertEqual(ret['message'], 'In order to use this service, you have to be aged or have the consent of a custodial person.')
+        self.assertEqual(ret['message'],
+                         'In order to use this service, you have to be aged or have the consent of a custodial person.')
         self.assertEqual(ret['isSuccess'], True)
 
     @mock.patch.object(
