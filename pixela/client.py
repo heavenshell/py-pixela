@@ -199,7 +199,7 @@ class UserMethodsMixin(object):
             'token': self.token,
             'username': self.username,
             'agreeTermsOfService': 'yes' if agree_terms_of_service is True else 'no',
-            'notMinor': 'yes' if agree_terms_of_service is True else 'no',
+            'notMinor': 'yes' if not_minor is True else 'no',
         }
 
         return self.send(method='post', url='users', params=params)
