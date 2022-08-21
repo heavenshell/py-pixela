@@ -13,3 +13,4 @@ parts
 .swp
 *~
 __pycache__
+.venv

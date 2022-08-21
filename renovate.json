@@ -5,6 +5,6 @@
     ":prHourlyLimitNone",
     ":timezone(Asia/Tokyo)"
   ],
-  "dependencyDashboard": true,
+  "dependencyDashboard": false,
   "schedule": ["after 9am on friday", "before 12am on friday"]
 }
