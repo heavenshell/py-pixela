@@ -87,5 +87,5 @@ class Pixela(
             self.logger.error(e)
 
     def to_ymd(self, date):
-        assert(isinstance(date, datetime))
+        assert isinstance(date, datetime)
         return date.strftime('%Y%m%d')
